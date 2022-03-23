@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+	background-color: #666;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d0d0d0;
+}
+
+.header {
+	padding: 35px;
+	color: white;
+	background-color: #555;
+	text-align: right;
+}
+
+.header .name {
+	text-align: center;
+}
+
+.header a {
+	color: currentColor;
+	text-decoration: none;
+	font-size: 32px;
+	transition: .4s;
+}
+
+.header .git:hover {
+	font-size: 42px;
+}
+
+.header .dis:hover {
+	font-size: 42px;
+}
+
+.about {
+	color: #ddd;
+	display: table;
+	margin: 0 auto;
+	margin-top: 150px;
+	padding: 15px;
+	background-color: #444;
+	width: 50%;
+}
+
+.about h2 {
+	text-align: center;
+}
+
+.skill-bars{
+  color: #ddd;
+  display: table;
+  margin: 100px auto 25px auto;
+  padding: 25px 30px;
+  width: 600px;
+  background: #444;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+.skill-bars .bar{
+  margin: 20px 0;
+}
+.skill-bars .bar:first-child{
+  margin-top: 0px;
+}
+.skill-bars .bar .info{
+  margin-bottom: 5px;
+}
+.skill-bars .bar .info span{
+  font-weight: 500;
+  font-size: 17px;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+@keyframes showText {
+  100%{
+    opacity: 1;
+  }
+}
+.skill-bars .bar .progress-line{
+  height: 10px;
+  width: 100%;
+  background: #555;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05),
+              0 1px rgba(75,75,75,0.8);
+  animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+@keyframes animate {
+  100%{
+    transform: scaleX(1);
+  }
+}
+.bar .progress-line span{
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #ddd;
+  animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+.bar .progress-line.html span{
+  width: 80%;
+}
+.bar .progress-line.css span{
+  width: 70%;
+}
+.bar .progress-line.jquery span{
+  width: 40%;
+}
+.bar .progress-line.python span{
+  width: 95%;
+}
+.bar .progress-line.nodejs span{
+  width: 65%;
+}
+.progress-line span::before{
+  position: absolute;
+  content: "";
+  top: -10px;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.progress-line span::after{
+  position: absolute;
+  top: -28px;
+  right: 0;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 12px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+  100%{
+    opacity: 1;
+  }
+}
+.progress-line.html span::after{
+  content: "80%";
+}
+.progress-line.css span::after{
+  content: "70%";
+}
+.progress-line.jquery span::after{
+  content: "40%";
+}
+.progress-line.python span::after{
+  content: "95%";
+}
+.progress-line.nodejs span::after{
+  content: "65%";
+}
+
+.projects {
+	background-color: #333;
+	padding: 7px;
+	color: #ddd;
+	margin-bottom: 15px;
+}
+
+.projects h1 {
+	text-align: center;
+}
+
+.projects h1 span {
+	font-size: 12px;
+}
+
+.project {
+  float: left;
+  width: 30%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.plist {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.plist:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 20px;
+  text-align: center;
+  background-color: #222;
+}
+
+.card h4 {
+  color: #dd6666;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.card p {
+  color: #ddaa66;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .project {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
